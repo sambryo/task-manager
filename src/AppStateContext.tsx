@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, useReducer, useContext } from 'react';
 
 interface Task {
   id: string;
@@ -42,4 +42,8 @@ export interface AppState {
 
 export const AppStateProvider = ({ children }: React.PropsWithChildren<{}>) => {
   return <AppStateContext.Provider value={{ state: appData }}>{children}</AppStateContext.Provider>;
+};
+
+export const useAppState = () => {
+  return useContext(AppStateContext);
 };
