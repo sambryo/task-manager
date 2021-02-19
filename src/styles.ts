@@ -74,7 +74,7 @@ export const NewItemButton = styled.div`
   text-align: center;
 `
 interface NewItemInputProps {
-  value: string | undefined
+  value: string | undefined 
 }
 export const NewItemInput = styled.div<NewItemInputProps>`
   border-radius: 3px; 
