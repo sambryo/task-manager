@@ -12,7 +12,7 @@ export const NewItemForm = (props: NewItemsProps) => {
     <NewItemFormContainer>
       <NewItemInput
         value={text}
-        onChange={(e) => setText((e.target as HTMLTextAreaElement).value)}
+        onChange={(e: React.FormEvent<HTMLInputElement>) => setText(e.currentTarget.value)}
       />
       <NewItemButton onClick={() => onAdd(text)}>Create</NewItemButton>
     </NewItemFormContainer>

@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const AppContainer = styled.div`
   align-items: flex-start; 
-  background-color: #000344;
+  background-color: #3179ba;
   display: flex; 
   flex-direction: row; 
   height: 100%; 
@@ -73,10 +73,8 @@ export const NewItemButton = styled.div`
   padding: 6px 12px; 
   text-align: center;
 `
-interface NewItemInputProps {
-  value: string | undefined
-}
-export const NewItemInput = styled.div<NewItemInputProps>`
+
+export const NewItemInput = styled.input`
   border-radius: 3px; 
   border: none; 
   box-shadow: #091e4240 0px 1px 0px 0px; 
