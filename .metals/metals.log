@@ -7,3 +7,13 @@
 [0m2021.03.03 15:27:27 INFO  time: initialize in 1.09s[0m
 [0m2021.03.03 15:27:27 WARN  Build server is not auto-connectable.[0m
 [0m2021.03.03 15:27:27 WARN  no build tool detected in workspace '/Users/samuelterefe/task-manager'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Mar 03, 2021 6:58:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+Mar 03, 2021 6:58:40 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+Mar 03, 2021 7:02:33 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+Mar 03, 2021 7:02:34 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+Mar 03, 2021 7:03:52 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
