@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 //@ts-ignore
 import App from './App.tsx';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import { AppStateProvider } from './AppStateContext';
 
 ReactDOM.render(
-  <AppStateProvider>
-    <App />
-  </AppStateProvider>,
+  <DndProvider backend={HTML5Backend}>
+    <AppStateProvider>
+      <App />
+    </AppStateProvider>
+    ,
+  </DndProvider>,
   document.getElementById('root')
 );
 

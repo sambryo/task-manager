@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useReducer } from 'react';
 import { findItemIndexById } from './utils/findItemIndexById';
 import { v1 as uuid } from 'uuid';
+import { moveItem } from './moveItem';
+import { DragItem } from './DragItem';
 interface Task {
   id: string;
   text: string;
@@ -12,6 +14,7 @@ interface List {
 }
 export interface AppState {
   lists: List[];
+  draggedItem?: DragItem;
 }
 type Action =
   | {
@@ -21,6 +24,17 @@ type Action =
   | {
       type: 'ADD_TASK';
       payload: { text: string; taskId: string };
+    }
+  | {
+      type: 'MOVE_LIST';
+      payload: {
+        dragIndex: number;
+        hoverIndex: number;
+      };
+    }
+  | {
+      type: 'SET_DRAGGED_ITEM';
+      payload: DragItem | undefined;
     };
 
 interface AppStateContextProps {
@@ -76,6 +90,14 @@ const appStateReducer = (state: AppState, action: Action): AppState => {
       return {
         ...state,
       };
+    }
+    case 'MOVE_LIST': {
+      const { dragIndex, hoverIndex } = action.payload;
+      state.lists = moveItem(state.lists, dragIndex, hoverIndex);
+      return { ...state };
+    }
+    case 'SET_DRAGGED_ITEM': {
+      return { ...state, draggedItem: action.payload };
     }
     default: {
       return state;
