@@ -44,7 +44,7 @@ export const Column = ({ text, index, id }: ColumnProps) => {
         onAdd={(text) =>
           dispatch({
             type: 'ADD_TASK',
-            payload: { text, columnId: id },
+            payload: { text, taskId: id },
           })
         }
         dark
