@@ -12,9 +12,10 @@ interface ColumnProps {
   text: string;
   index: number;
   id: string;
+  isPreview?: boolean;
 }
 
-export const Column = ({ text, index, id }: ColumnProps) => {
+export const Column = ({ text, index, id, isPreview }: ColumnProps) => {
   const { state, dispatch } = useAppState();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -34,10 +35,14 @@ export const Column = ({ text, index, id }: ColumnProps) => {
   });
   drag(drop(ref));
   return (
-    <ColumnContainer ref={ref} isHidden={isHidden(state.draggedItem, 'COLUMN', id)}>
+    <ColumnContainer
+      isPreview={isPreview}
+      ref={ref}
+      isHidden={isHidden(isPreview, state.draggedItem, 'COLUMN', id)}
+    >
       <ColumnTitle>{text}</ColumnTitle>
       {state.lists[index].tasks.map((task, i) => (
-        <Card text={task.text} key={task.id} index={i} />
+        <Card text={task.text} key={task.id} index={i} id={id} columnId={id} />
       ))}
       <AddNewItem
         toggleButtonText="+ Add another task"
